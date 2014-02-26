@@ -85,6 +85,17 @@ module.exports = function(grunt) {
         ],
         tasks: ['sass']
       }
+    },
+
+    sed: {
+      versionNumber: {
+        pattern: (function () {
+          var old = grunt.option('oldver');
+          return old ? RegExp.quote(old) : old;
+        })(),
+        replacement: grunt.option('newver'),
+        recursive: true
+      }
     }
   });
 
@@ -95,4 +106,9 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['sass', 'concat', 'copy']);
   grunt.registerTask('build', ['sass', 'concat', 'copy']);
+
+  // Version numbering task.
+  // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
+  // This can be overzealous, so its changes should always be manually reviewed!
+  grunt.registerTask('change-version-number', 'sed');
 };

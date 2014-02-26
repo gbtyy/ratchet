@@ -35,6 +35,7 @@
     "grunt-contrib-sass": "~0.7.1",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-jekyll": "~0.4.1",
+    "grunt-sed": "~0.1.1",
     "load-grunt-tasks": "~0.4.0"
   }
 }
