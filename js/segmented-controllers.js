@@ -1,18 +1,28 @@
-/* ----------------------------------
- * Segmented controls v2.0.0
- * Licensed under The MIT License
- * http://opensource.org/licenses/MIT
- * ---------------------------------- */
+/* ========================================================================
+ * Ratchet: segmented-controllers.js v2.0.2
+ * http://goratchet.com/components#segmentedControls
+ * ========================================================================
+ * Copyright 2015 Connor Sears
+ * Licensed under MIT (https://github.com/twbs/ratchet/blob/master/LICENSE)
+ * ======================================================================== */
 
-!function () {
+!(function () {
+  'use strict';
+
   var getTarget = function (target) {
-    var i, segmentedControls = document.querySelectorAll('.segmented-control .control-item');
+    var i;
+    var segmentedControls = document.querySelectorAll('.segmented-control .control-item');
+
     for (; target && target !== document; target = target.parentNode) {
-      for (i = segmentedControls.length; i--;) { if (segmentedControls[i] === target) return target; }
+      for (i = segmentedControls.length; i--;) {
+        if (segmentedControls[i] === target) {
+          return target;
+        }
+      }
     }
   };
 
-  window.addEventListener("touchend", function (e) {
+  window.addEventListener('touchend', function (e) {
     var activeTab;
     var activeBodies;
     var targetBody;
@@ -20,19 +30,27 @@
     var className     = 'active';
     var classSelector = '.' + className;
 
-    if (!targetTab) return;
+    if (!targetTab) {
+      return;
+    }
 
     activeTab = targetTab.parentNode.querySelector(classSelector);
 
-    if (activeTab) activeTab.classList.remove(className);
+    if (activeTab) {
+      activeTab.classList.remove(className);
+    }
 
     targetTab.classList.add(className);
 
-    if (!targetTab.hash) return;
+    if (!targetTab.hash) {
+      return;
+    }
 
     targetBody = document.querySelector(targetTab.hash);
 
-    if (!targetBody) return;
+    if (!targetBody) {
+      return;
+    }
 
     activeBodies = targetBody.parentNode.querySelectorAll(classSelector);
 
@@ -43,5 +61,10 @@
     targetBody.classList.add(className);
   });
 
-  window.addEventListener('click', function (e) { if (getTarget(e.target)) e.preventDefault(); });
-}();
+  window.addEventListener('click', function (e) {
+    if (getTarget(e.target)) {
+      e.preventDefault();
+    }
+  });
+
+}());

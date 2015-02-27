@@ -1,12 +1,29 @@
 {
   "name": "ratchet",
-  "version": "2.0.0",
+  "description": "Build mobile apps with simple HTML, CSS, and JS components.",
+  "version": "2.0.2",
+  "keywords": [
+    "css",
+    "js",
+    "fonts",
+    "ios",
+    "android",
+    "mobile",
+    "prototype"
+  ],
+  "homepage": "http://goratchet.com",
   "main": [
-    "./dist/ratchet.css",
-    "./dist/ratchet.js"
+    "sass/ratchet.scss",
+    "dist/css/ratchet.css",
+    "dist/js/ratchet.js",
+    "dist/fonts/ratchicons.eot",
+    "dist/fonts/ratchicons.svg",
+    "dist/fonts/ratchicons.ttf",
+    "dist/fonts/ratchicons.woff"
   ],
   "ignore": [
     "_config.yml",
+    ".travis.yml",
     "CNAME",
     "CONTRIBUTING.md",
     "docs"

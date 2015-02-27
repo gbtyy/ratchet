@@ -36,7 +36,7 @@ a {
 
 // Wrapper to be used around all content not in .bar-title and .bar-tab
 .content {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -80,6 +80,9 @@ a {
 // Utility classes
 .content-padded {
   margin: $bar-side-spacing;
+}
+.text-center {
+  text-align: center;
 }
 .pull-left {
   float: left;
